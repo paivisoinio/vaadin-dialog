@@ -10,7 +10,29 @@ This program is available under Apache License Version 2.0, available at https:/
 <dom-module id="vaadin-dialog-overlay-default-theme" theme-for="vaadin-dialog-overlay">
   <template>
     <style>
+      :host([theme="left"]) {
+        align-items: flex-start;
+      }
+
+      :host([theme="right"]) {
+        align-items: flex-end;
+      }
+
+      :host([theme="left"]) [part="overlay"],
+      :host([theme="right"]) [part="overlay"] {
+        flex: 1;
+        max-width: 45em;
+      }
+
+      [part="overlay"] {
+        display: flex;
+        flex-direction: column;
+      }
+
       [part="content"] {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         padding: 5px;
       }
     </style>

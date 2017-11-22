@@ -63,6 +63,42 @@
         </script>
       </template>
     </vaadin-demo-snippet>
+
+    <h3>Position</h3>
+    <vaadin-demo-snippet id='dialog-basic-demos-position'>
+      <template preserve-content>
+        <dom-bind id="dialog-position">
+          <template>
+            <vaadin-dialog id="dialog">
+              <template>
+                <div>Positioned dialog</div>
+              </template>
+            </vaadin-dialog>
+            <vaadin-button on-click="openDialogLeft">Open Left</vaadin-button>
+            <vaadin-button on-click="openDialog">Open Middle</vaadin-button>
+            <vaadin-button on-click="openDialogRight">Open Right</vaadin-button>
+          </template>
+        </dom-bind>
+        <script>
+          window.addDemoReadyListener('#dialog-basic-demos-position', function(document) {
+            var dialogExample = document.querySelector('#dialog-position');
+            dialogExample.openDialogLeft = function() {
+              dialogExample.$.dialog.theme = "left"
+              dialogExample.$.dialog.opened = true;
+            };
+            dialogExample.openDialogRight = function() {
+              dialogExample.$.dialog.theme = "right"
+              dialogExample.$.dialog.opened = true;
+            };
+            dialogExample.openDialog = function() {
+              dialogExample.$.dialog.theme = ""
+              dialogExample.$.dialog.opened = true;
+            };
+          });
+        </script>
+      </template>
+    </vaadin-demo-snippet>
+
   </div>
 
   </template>
